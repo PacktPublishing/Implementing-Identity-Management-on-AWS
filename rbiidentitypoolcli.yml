@@ -1,0 +1,7 @@
+IdentityPoolName: 'rbiidentitypoolcli'  # [REQUIRED] A string that you provide.
+AllowUnauthenticatedIdentities: false # [REQUIRED] TRUE if the identity pool supports unauthenticated logins.
+AllowClassicFlow: false # Enables or disables the Basic (Classic) authentication flow.
+CognitoIdentityProviders: # An array of Amazon Cognito user pools and their client IDs.
+- ProviderName: 'cognito-idp.us-east-1.amazonaws.com/us-east-1_yGe1YAnTV'  # The provider name for an Amazon Cognito user pool.
+  ClientId: 'rbiidentitypool' # The client ID for the Amazon Cognito user pool.
+  ServerSideTokenCheck: true # TRUE if server-side token validation is enabled for the identity provider’s token.
