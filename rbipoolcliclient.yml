@@ -1,0 +1,49 @@
+UserPoolId: 'us-east-1_yGe1YAnTV'  # [REQUIRED] The user pool ID for the user pool where you want to create a user pool client.
+ClientName: 'rbipoolcliclient' # [REQUIRED] The client name for the user pool client you would like to create.
+GenerateSecret: true # Boolean to specify whether you want to generate a secret for the user pool client being created.
+RefreshTokenValidity: 30 # The time limit, in days, after which the refresh token is no longer valid and cannot be used.
+AccessTokenValidity: 1 # The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and cannot be used.
+IdTokenValidity: 1 # The time limit, between 5 minutes and 1 day, after which the ID token is no longer valid and cannot be used.
+TokenValidityUnits: # The units in which the validity times are represented in.
+  AccessToken: hours  #  A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity, defaults to hours. Valid values are: seconds, minutes, hours, days.
+  IdToken: hours # A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity, defaults to hours. Valid values are: seconds, minutes, hours, days.
+  RefreshToken: days # A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity, defaults to days. Valid values are: seconds, minutes, hours, days.
+ReadAttributes: # The read attributes.
+  - address
+  - birthdate
+  - custom:custom:costcenter
+  - email
+  - email_verified
+  - family_name
+  - gender
+  - given_name
+  - locale
+  - middle_name
+  - name
+  - nickname
+  - phone_number
+  - phone_number_verified
+  - picture
+  - preferred_username
+  - profile
+  - updated_at
+  - website
+  - zoneinfo
+ExplicitAuthFlows: # The authentication flows that are supported by the user pool clients.
+  - ALLOW_CUSTOM_AUTH
+  - ALLOW_REFRESH_TOKEN_AUTH
+  - ALLOW_USER_SRP_AUTH
+SupportedIdentityProviders: # A list of provider names for the identity providers that are supported on this client.
+- COGNITO
+CallbackURLs: # A list of allowed redirect (callback) URLs for the identity providers.
+- 'https://openidconnect.net/callback'
+AllowedOAuthFlows: # The allowed OAuth flows.
+  - code
+AllowedOAuthFlowsUserPoolClient: true
+AllowedOAuthScopes:
+  - aws.cognito.signin.user.admin
+  - email
+  - openid
+  - phone
+  - profile
+PreventUserExistenceErrors: ENABLED

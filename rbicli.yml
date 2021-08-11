@@ -1,0 +1,112 @@
+PoolName: 'rbipoolcli'  # [REQUIRED] A string used to name the user pool.
+Policies: # The policies associated with the new user pool.
+  PasswordPolicy:  # The password policy.
+    MinimumLength: 8  # The minimum length of the password policy that you have set.
+    RequireUppercase: true # In the password policy that you have set, refers to whether you have required users to use at least one uppercase letter in their password.
+    RequireLowercase: true # In the password policy that you have set, refers to whether you have required users to use at least one lowercase letter in their password.
+    RequireNumbers: true # In the password policy that you have set, refers to whether you have required users to use at least one number in their password.
+    RequireSymbols: true # In the password policy that you have set, refers to whether you have required users to use at least one symbol in their password.
+    TemporaryPasswordValidityDays: 7 # In the password policy you have set, refers to the number of days a temporary password is valid.
+LambdaConfig: # The Lambda trigger configuration information for the new user pool.
+  PreSignUp: ''  # A pre-registration AWS Lambda trigger.
+  CustomMessage: '' # A custom Message AWS Lambda trigger.
+  PostConfirmation: '' # A post-confirmation AWS Lambda trigger.
+  PreAuthentication: '' # A pre-authentication AWS Lambda trigger.
+  PostAuthentication: '' # A post-authentication AWS Lambda trigger.
+  DefineAuthChallenge: '' # Defines the authentication challenge.
+  CreateAuthChallenge: '' # Creates an authentication challenge.
+  VerifyAuthChallengeResponse: '' # Verifies the authentication challenge response.
+  PreTokenGeneration: '' # A Lambda trigger that is invoked before token generation.
+  UserMigration: '' # The user migration Lambda config type.
+AutoVerifiedAttributes: # The attributes to be auto-verified.
+- email
+AliasAttributes: # Attributes supported as an alias for this user pool.
+- email
+UsernameAttributes: # Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+- email
+SmsVerificationMessage: '' # A string representing the SMS verification message.
+EmailVerificationMessage: 'Your account is now verified and ready for use.' # A string representing the email verification message.
+EmailVerificationSubject: 'Your account is now verified and ready for use.' # A string representing the email verification subject.
+VerificationMessageTemplate: # The template for the verification message that the user sees when the app requests permission to access the user's information.
+  SmsMessage: ''  # The SMS message template.
+  EmailMessage: 'Your verification code is {####}.' # The email message template.
+  EmailSubject: 'Your verification code.' # The subject line for the email message template.
+  EmailMessageByLink: 'Please click the link below to verify your email address. {##Verify Email##}' # The email message template for sending a confirmation link to the user.
+  EmailSubjectByLink: 'Your verification link.' # The subject line for the email message template for sending a confirmation link to the user.
+  DefaultEmailOption: CONFIRM_WITH_LINK # The default email option. Valid values are: CONFIRM_WITH_LINK, CONFIRM_WITH_CODE.
+SmsAuthenticationMessage: '' # A string representing the SMS authentication message.
+MfaConfiguration: OPTIONAL # Specifies MFA configuration details. Valid values are: OFF, ON, OPTIONAL.
+DeviceConfiguration: # The device configuration.
+  ChallengeRequiredOnNewDevice: true  # Indicates whether a challenge is required on a new device.
+  DeviceOnlyRememberedOnUserPrompt: true # If true, a device is only remembered on user prompt.
+EmailConfiguration: # The email configuration.
+  SourceArn: ''  # The Amazon Resource Name (ARN) of a verified email address in Amazon SES.
+  ReplyToEmailAddress: '' # The destination to which the receiver of the email should reply to.
+  EmailSendingAccount: COGNITO_DEFAULT # Specifies whether Amazon Cognito emails your users by using its built-in email functionality or your Amazon SES email configuration. Valid values are: COGNITO_DEFAULT, DEVELOPER.
+  From: '' # Identifies either the sender’s email address or the sender’s name with their email address.
+  ConfigurationSet: '' # The set of configuration rules that can be applied to emails sent using Amazon SES.
+SmsConfiguration: # The SMS configuration.
+  SnsCallerArn: ''  # [REQUIRED] The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+  ExternalId: '' # The external ID is a value that we recommend you use to add security to your IAM role which is used to call Amazon SNS to send SMS messages for your user pool.
+UserPoolTags: # The tag keys and values to assign to the user pool.
+  KeyName: ''
+AdminCreateUserConfig: # The configuration for AdminCreateUser requests.
+  AllowAdminCreateUserOnly: false  # Set to True if only the administrator is allowed to create user profiles.
+  UnusedAccountValidityDays: 180 # The user account expiration limit, in days, after which the account is no longer usable.
+  InviteMessageTemplate: # The message template to be used for the welcome message to new users.
+    SMSMessage: 'Your username is {username} and temporary password is {####}.'  # The message template for SMS messages.
+    EmailMessage: 'Your username is {username} and temporary password is {####}.' # The message template for email messages.
+    EmailSubject: 'Your temporary password' # The subject line for email messages.
+Schema: # An array of schema attributes for the new user pool.
+- Name: 'given_name'  # A schema attribute of the name type.
+  AttributeDataType: String # The attribute data type. Valid values are: String, Number, DateTime, Boolean.
+  DeveloperOnlyAttribute: false #  We recommend that you use WriteAttributes in the user pool client to control how attributes can be mutated for new use cases instead of using DeveloperOnlyAttribute.
+  Mutable: true # Specifies whether the value of the attribute can be changed.
+  Required: true # Specifies whether a user pool attribute is required.
+  NumberAttributeConstraints: # Specifies the constraints for an attribute of the number type.
+    MinValue: ''  # The minimum value of an attribute that is of the number data type.
+    MaxValue: '' # The maximum value of an attribute that is of the number data type.
+  StringAttributeConstraints: # Specifies the constraints for an attribute of the string type.
+    MinLength: '0'  # The minimum length.
+    MaxLength: '2048' # The maximum length.
+- Name: 'family_name'  # A schema attribute of the name type.
+  AttributeDataType: String # The attribute data type. Valid values are: String, Number, DateTime, Boolean.
+  DeveloperOnlyAttribute: false #  We recommend that you use WriteAttributes in the user pool client to control how attributes can be mutated for new use cases instead of using DeveloperOnlyAttribute.
+  Mutable: true # Specifies whether the value of the attribute can be changed.
+  Required: true # Specifies whether a user pool attribute is required.
+  NumberAttributeConstraints: # Specifies the constraints for an attribute of the number type.
+    MinValue: ''  # The minimum value of an attribute that is of the number data type.
+    MaxValue: '' # The maximum value of an attribute that is of the number data type.
+  StringAttributeConstraints: # Specifies the constraints for an attribute of the string type.
+    MinLength: '0'  # The minimum length.
+    MaxLength: '2048' # The maximum length.
+- Name: 'given_name'  # A schema attribute of the name type.
+  AttributeDataType: String # The attribute data type. Valid values are: String, Number, DateTime, Boolean.
+  DeveloperOnlyAttribute: false #  We recommend that you use WriteAttributes in the user pool client to control how attributes can be mutated for new use cases instead of using DeveloperOnlyAttribute.
+  Mutable: true # Specifies whether the value of the attribute can be changed.
+  Required: true # Specifies whether a user pool attribute is required.
+  NumberAttributeConstraints: # Specifies the constraints for an attribute of the number type.
+    MinValue: ''  # The minimum value of an attribute that is of the number data type.
+    MaxValue: '' # The maximum value of an attribute that is of the number data type.
+  StringAttributeConstraints: # Specifies the constraints for an attribute of the string type.
+    MinLength: '0'  # The minimum length.
+    MaxLength: '2048' # The maximum length.
+- Name: 'email'  # A schema attribute of the name type.
+  AttributeDataType: String # The attribute data type. Valid values are: String, Number, DateTime, Boolean.
+  DeveloperOnlyAttribute: false #  We recommend that you use WriteAttributes in the user pool client to control how attributes can be mutated for new use cases instead of using DeveloperOnlyAttribute.
+  Mutable: true # Specifies whether the value of the attribute can be changed.
+  Required: true # Specifies whether a user pool attribute is required.
+  NumberAttributeConstraints: # Specifies the constraints for an attribute of the number type.
+    MinValue: ''  # The minimum value of an attribute that is of the number data type.
+    MaxValue: '' # The maximum value of an attribute that is of the number data type.
+  StringAttributeConstraints: # Specifies the constraints for an attribute of the string type.
+    MinLength: '0'  # The minimum length.
+    MaxLength: '2048' # The maximum length.
+UserPoolAddOns: # Used to enable advanced security risk detection.
+  AdvancedSecurityMode: OFF  # [REQUIRED] The advanced security mode. Valid values are: OFF, AUDIT, ENFORCED.
+UsernameConfiguration: # You can choose to set case sensitivity on the username input for the selected sign-in option.
+  CaseSensitive: false  # [REQUIRED] Specifies whether username case sensitivity will be applied for all users in the user pool through Cognito APIs.
+AccountRecoverySetting: # Use this setting to define which verified available method a user can use to recover their password when they call ForgotPassword.
+  RecoveryMechanisms:  # The list of RecoveryOptionTypes.
+  - Priority: 1  # [REQUIRED] A positive integer specifying priority of a method with 1 being the highest priority.
+    Name: verified_email # [REQUIRED] Specifies the recovery method for a user. Valid values are: verified_email, verified_phone_number, admin_only.
