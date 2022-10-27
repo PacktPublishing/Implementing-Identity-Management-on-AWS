@@ -56,3 +56,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 has 16 years of enterprise identity and access management experience and specializes in both the strategy and execution of IAM transformation in global-scale organizations such as Thomson Reuters, General Electric, and Apollo Education Group. In addition to his work in the enterprise space, he has held positions on Ping Identity’s Customer Advisory Board and as an advisor to identity verification start-up EvidentID. He currently owns the workforce and customer identity implementations at Okta.
 Jon is dedicated to the growth and maturity of IAM as a profession and serves on the Board of Directors for IDPro org. He is also a member of the Kantara Initiative, ISC2, OpenID Foundation, and Women in Identity. Jon has presented his work at several conferences, including RSA, Identiverse, and KuppingerCole’s European Identity and Cloud Conference.
 Currently, he owns Okta’s workforce and customer IAM implementations as their Director of Okta on Okta.
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781800562288">https://packt.link/free-ebook/9781800562288 </a> </p>
